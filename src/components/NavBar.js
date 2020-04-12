@@ -10,7 +10,7 @@ const NavBar = () => {
             Home
             </NavLink>
             <NavLink style={{ marginRight: '10px' }} 
-                to="/contacts"
+                to="/users/:id/contacts/index"
             >
             Contacts
             </NavLink>

@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 // import { connect } from 'react-redux';
 
 //import components
+import ContactInput from './components/ContactInput'
+import ContactShow from './components/ContactShow'
 
 export default class App extends Component{
 
@@ -22,14 +24,16 @@ export default class App extends Component{
       <Router>
       <div className="App">
         <NavBar />
-        <Route exact path="/" component={Home} />
-        <Route path='/user/:id/contacts' component={Contacts} />
-        <Route path='/user/:id/jobs' component={Jobs} />
+        {/* <Route exact path="/" component={Home} /> */}
+        <Route path='/users/:id/contacts/index' component={ContactShow} />
+        <Route path='/users/:id/contacts/new' component={ContactInput} />
+        {/* <Route path='/user/:id/jobs' component={Jobs} /> */}
 
       </div>
       </Router>
     );
   }
+
 }
 
 {/* const mapStateToProps
