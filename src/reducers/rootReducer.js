@@ -3,8 +3,8 @@ import jobReducer from './jobReducer'
 import contactReducer from './contactReducer'
 
 const rootReducer = combineReducers({
-    jobReducer,
-    contactReducer
+    jobs: jobReducer,
+    contacts: contactReducer
 })
 
 export default rootReducer

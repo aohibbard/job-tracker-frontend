@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 //import components
 import ContactInput from './components/ContactInput'
-import ContactShow from './components/ContactShow'
+import Contacts from './containers/Contacts'
 
 export default class App extends Component{
 
@@ -25,7 +25,7 @@ export default class App extends Component{
       <div className="App">
         <NavBar />
         {/* <Route exact path="/" component={Home} /> */}
-        <Route path='/users/:id/contacts/index' component={ContactShow} />
+        <Route path='/users/:id/contacts/index' component={Contacts} />
         <Route path='/users/:id/contacts/new' component={ContactInput} />
         {/* <Route path='/user/:id/jobs' component={Jobs} /> */}
 
