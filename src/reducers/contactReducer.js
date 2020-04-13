@@ -6,9 +6,9 @@ export default function contactReducer( state = {
     }, action){
         switch(action.type){
             case 'ADD_CONTACT':
-                const contact = {id: cuid(), }
+                const newContact = {id: cuid(), name: action.contact.name, company: action.contact.company, notes: action.contact.notes}
                 return {...state,
-                    contacts: [...state.contacts, contact],
+                    contacts: [...state.contacts, newContact],
                     loading: false
                 };
             case 'LOAD_CONTACT':
