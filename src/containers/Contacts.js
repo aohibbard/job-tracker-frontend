@@ -4,9 +4,15 @@ import { connect } from 'react-redux';
 import ContactInput from '../components/ContactInput'
 import ContactsAll from '../components/ContactsAll'
 
-// import action 
+import { fetchContacts } from '../actions/FetchContacts';
 
 class Contacts extends React.Component{
+
+    componentDidMount(){
+        // debugger
+        console.log("Component did mount")
+        this.props.fetchContacts()
+    }
 
     render(){
         return(
@@ -21,14 +27,15 @@ class Contacts extends React.Component{
 
 const mapStateToProps = state => {
     console.log("hit mapStateToProps")
+    console.log("xyz")
     return {contacts: state.contacts}
 }
 
 const mapDispatchToProps = dispatch => ({
-
-    addContact: contact => dispatch({type: 'ADD_CONTACT', contact})    // add commas
+    fetchContacts: () => dispatch({type: 'FETCH_CONTACT'}),
+    addContact: contact => dispatch({type: 'ADD_CONTACT', contact})
     // edit
     // delete
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contacts)
+export default connect(mapStateToProps, {fetchContacts} )(Contacts)
