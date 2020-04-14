@@ -3,8 +3,21 @@ export default function jobReducer( state = {
     jobs: [],
     }, action){
         switch(action.type){
+            case 'LOADING_JOBS':
+                return {...state,
+                    jobs: [...state.jobs],
+                    loading: true
+                };
+            case 'FETCH_JOBS':
+                debugger
+                return {
+                    ...state,
+                    jobs: action.jobs,
+                    loading: false
+                };
             case 'ADD_JOB':
             const newJob = {
+                // change to show real id
                 id: Math.floor(Math.random() * 6),
                 title: action.job.title,
                 company: action.job.company,
@@ -17,11 +30,6 @@ export default function jobReducer( state = {
                 //this line is causing the double contacts
                 loading: false
             };
-                return state;
-            case 'LOADING_JOBS':
-                return state;
-            case 'FETCH_JOBS':
-                return state;
             default:
                 return state;
         }

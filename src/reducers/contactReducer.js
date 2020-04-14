@@ -19,10 +19,10 @@ export default function contactReducer( state = {
                 }
             case 'ADD_CONTACT':
                 const newContact = {
-                    id: action.contact.id,
-                    name: action.contact.name,
-                    company: action.contact.company,
-                    notes: action.contact.notes}
+                    id: action.contacts.id,
+                    name: action.contacts.name,
+                    company: action.contacts.company,
+                    notes: action.contacts.notes}
                 return {...state,
                     contacts: [...state.contacts, newContact],
                     //this line is causing the double contacts
