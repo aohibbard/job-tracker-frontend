@@ -4,7 +4,6 @@ export default class JobView extends React.Component{
 
     render(){
         console.log(this.props)
-        debugger
         return(
             <div id={this.props.job.id}>
                 Contact

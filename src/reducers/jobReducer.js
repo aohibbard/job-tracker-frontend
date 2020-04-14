@@ -18,7 +18,7 @@ export default function jobReducer( state = {
                 debugger
             const newJob = {
                 // change to show real id
-                id: Math.floor(Math.random() * 6),
+                id: action.job.title,
                 title: action.job.title,
                 company: action.job.company,
                 due: action.job.due,
