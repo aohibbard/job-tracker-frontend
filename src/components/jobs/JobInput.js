@@ -19,13 +19,14 @@ class JobInput extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
+        debugger
         this.props.addJob(this.state)
         this.setState({
             title: '',
             company: '',
             due: '',
             applied: false,
-            url: 
+            url: ''
         })
     }
 
@@ -33,15 +34,26 @@ class JobInput extends React.Component{
         return(
             <div className="JobInput">
             <form onSubmit={this.handleSubmit}>
+                <label>Title </label>
                 <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
+                <br />
+                <label>Company </label>
                 <input type="input" name="company" value={this.state.company} onChange={this.handleChange} />
+                <br />
+                <label>Due </label>
                 <input type="date" name="due" value={this.state.due} onChange={this.handleChange} />
+                <br />
+                <label>Applied </label>
                 <input type="checkbox" name="applied" value={this.state.applied} onChange={this.handleChange} />
+                <br />
+                <label>Link </label>
                 <input type="text" name="url" value={this.state.url} onChange={this.handleChange} />
+                <br />
+                <input type="submit" value="Add Job" />
             </form>
             </div>
         )
     }
 }
 
-export default class JobInput;
+export default JobInput

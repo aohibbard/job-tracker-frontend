@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar.js'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-// import { connect } from 'react-redux';
 
 //import components
-import ContactInput from './components/ContactInput'
+// import ContactInput from './components/ContactInput'
 import Contacts from './containers/Contacts'
+import Jobs from './containers/Jobs'
 
 export default class App extends Component{
 
@@ -26,8 +26,8 @@ export default class App extends Component{
         <NavBar />
         {/* <Route exact path="/" component={Home} /> */}
         <Route path='/users/:id/contacts/index' component={Contacts} />
-        <Route path='/users/:id/contacts/new' component={ContactInput} />
-        {/* <Route path='/user/:id/jobs' component={Jobs} /> */}
+        {/* <Route path='/users/:id/contacts/new' component={ContactInput} /> */}
+        <Route path='/users/:id/jobs' component={Jobs} />
 
       </div>
       </Router>
@@ -35,8 +35,3 @@ export default class App extends Component{
   }
 
 }
-
-{/* const mapStateToProps
-const mapDispatchToProps */}
-
-{/* export default connect(mapStateToProps, mapDispatchToProps)(App);  */}

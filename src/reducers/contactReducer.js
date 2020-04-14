@@ -18,7 +18,6 @@ export default function contactReducer( state = {
                     loading: false
                 }
             case 'ADD_CONTACT':
-                debugger
                 const newContact = {
                     id: action.contact.id,
                     name: action.contact.name,

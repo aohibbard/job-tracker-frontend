@@ -9,13 +9,15 @@ const NavBar = () => {
             >
             Home
             </NavLink>
+
             <NavLink style={{ marginRight: '10px' }} 
                 to="/users/:id/contacts/index"
             >
             Contacts
             </NavLink>
+
             <NavLink style={{ marginRight: '10px' }} 
-                to="/jobs"
+                to="/users/:id/jobs"
             >
             Jobs
             </NavLink>

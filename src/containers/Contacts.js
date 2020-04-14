@@ -27,8 +27,6 @@ class Contacts extends React.Component{
 }
 
 const mapStateToProps = state => {
-    console.log("hit mapStateToProps")
-    console.log("xyz")
     return {contacts: state.contacts}
 }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import JobInput from '../components/jobsJobInput';
+import JobInput from '../components/jobs/JobInput';
+import JobsAll from '../components/jobs/JobsAll.js';
 
 //actions
 
@@ -11,39 +12,26 @@ class Jobs extends React.Component{
 
     render(){
         return(
-            <JobInput />
+            <div>
+                Show Jobs
+                <JobInput addJob={this.props.addJob} />
+                <JobsAll jobs={this.props} />
+            </div>
         )
     }
 }
 
+const mapStateToProps = state => {
+    return state
+}
 
-// import React from 'react';
-// import { connect } from 'react-redux'; 
+const mapDispatchToProps = dispatch => ({
+    addJob: job => dispatch({type: 'ADD_JOB', job})
+})
 
-// import ContactInput from '../components/ContactInput'
-// import ContactsAll from '../components/ContactsAll'
+export default connect(mapStateToProps, mapDispatchToProps)(Jobs)
 
-// import { fetchContacts } from '../actions/FetchContacts';
-// import { addContact } from '../actions/AddContact';
 
-// class Contacts extends React.Component{
-
-//     componentDidMount(){
-//         // debugger
-//         console.log("Component did mount")
-//         this.props.fetchContacts()
-//     }
-
-//     render(){
-//         return(
-//             <div>
-//                 Contact Show?
-//                 <ContactInput addContact={this.props.addContact} />
-//                 <ContactsAll contacts={this.props.contacts} />
-//             </div>
-//         )
-//     }
-// }
 
 // const mapStateToProps = state => {
 //     console.log("hit mapStateToProps")
@@ -58,4 +46,3 @@ class Jobs extends React.Component{
 // //     // delete
 // // })
 
-// export default connect(mapStateToProps, {fetchContacts, addContact})(Contacts)
