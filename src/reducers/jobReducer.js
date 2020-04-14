@@ -9,13 +9,13 @@ export default function jobReducer( state = {
                     loading: true
                 };
             case 'FETCH_JOBS':
-                debugger
                 return {
                     ...state,
                     jobs: action.jobs,
                     loading: false
                 };
             case 'ADD_JOB':
+                debugger
             const newJob = {
                 // change to show real id
                 id: Math.floor(Math.random() * 6),
@@ -25,6 +25,7 @@ export default function jobReducer( state = {
                 applied: action.job.applied,
                 url: action.job.url 
             }
+            debugger
             return {...state,
                 jobs: [...state.jobs, newJob],
                 //this line is causing the double contacts

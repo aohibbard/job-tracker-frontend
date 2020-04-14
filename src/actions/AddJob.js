@@ -12,11 +12,14 @@ export function addJob(job){
             },
             body: JSON.stringify(job)
         }
+
+        debugger
         fetch(URL + 'users/1/jobs', configObj)
         .then(res => res.json())
         .then(job => {
             let newJob = job.data.attributes
-            dispatch({type: 'ADD_JOB', contacts: newJob}) 
+            debugger
+            dispatch({type: 'ADD_JOB', job: newJob}) 
         })
     }
 }

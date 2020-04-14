@@ -13,8 +13,6 @@ export default class ContactsAll extends React.Component{
     // }
 
     render(){
-        debugger
-        //issue on add Contact
         return(
             <div>
                 My Contacts
