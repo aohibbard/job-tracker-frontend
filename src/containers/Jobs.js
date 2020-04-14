@@ -18,8 +18,8 @@ class Jobs extends React.Component{
         return(
             <div>
                 Show Jobs
-                <JobInput addJob={this.props.addJob} deleteJob={this.props.deleteJob}/>
-                <JobsAll jobs={this.props.jobs} />
+                <JobInput addJob={this.props.addJob} />
+                <JobsAll jobs={this.props.jobs} deleteJob={this.props.deleteJob} />
             </div>
         )
     }

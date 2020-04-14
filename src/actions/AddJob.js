@@ -13,7 +13,6 @@ export function addJob(job){
             body: JSON.stringify(job)
         }
 
-        debugger
         fetch(URL + 'users/1/jobs', configObj)
         .then(res => res.json())
         .then(job => {
@@ -24,15 +23,13 @@ export function addJob(job){
     }
 }
 
-export function deleteJob(job){
+export function deleteJob(jobId){
     return(dispatch) => {
-        debugger
         dispatch({type: 'LOAD_CONTACTS'})
 
-        fetch(URL +`users/1/jobs/${job.id}`, {
+        fetch(URL +`users/1/jobs/${jobId}`, {
             method: 'DELETE'
         })
-        .then(dispatch({type: 'DELETE_JOB'}))
-
+        .then(dispatch({type: 'DELETE_JOB', jobId}))
     }
 }

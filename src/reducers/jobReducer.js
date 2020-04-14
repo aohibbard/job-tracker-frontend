@@ -30,9 +30,10 @@ export default function jobReducer( state = {
                 loading: false
             };
             case 'DELETE_JOB':
+                debugger
                 return {
                     ...state,
-                    jobs: state.jobs.filter(job => job.id !== action.job.id),
+                    jobs: state.jobs.filter(job => job.id !== action.jobId),
                     loading: false
                 };
             default:
