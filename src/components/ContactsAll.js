@@ -14,9 +14,11 @@ export default class ContactsAll extends React.Component{
 
     render(){
         debugger
+        //issue on add Contact
         return(
             <div>
                 My Contacts
+                {/* implement sort */}
                 {this.props.contacts.contacts.map(contact => <ContactView key={contact.id} contact={contact} />)}
                 {/*pass  in delete and edit */}
 
