@@ -19,7 +19,6 @@ class JobInput extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        debugger
         this.props.addJob(this.state)
         this.setState({
             title: '',

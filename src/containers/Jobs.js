@@ -15,7 +15,7 @@ class Jobs extends React.Component{
             <div>
                 Show Jobs
                 <JobInput addJob={this.props.addJob} />
-                <JobsAll jobs={this.props} />
+                <JobsAll jobs={this.props.jobs} />
             </div>
         )
     }

@@ -4,14 +4,13 @@ export default function jobReducer( state = {
     }, action){
         switch(action.type){
             case 'ADD_JOB':
-            debugger
             const newJob = {
                 id: Math.floor(Math.random() * 6),
                 title: action.job.title,
                 company: action.job.company,
                 due: action.job.due,
                 applied: action.job.applied,
-                ur: action.job.url 
+                url: action.job.url 
             }
             return {...state,
                 jobs: [...state.jobs, newJob],
