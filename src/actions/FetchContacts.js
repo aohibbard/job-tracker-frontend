@@ -7,7 +7,6 @@ export const fetchContacts = () => {
         .then(res => res.json())
         .then(contacts => {
             let contactArr = []
-            console.log(contacts.data)
             contacts.data.forEach( obj => contactArr.push(obj.attributes))
             dispatch({type: 'FETCH_CONTACTS', contacts: contactArr}) 
         })

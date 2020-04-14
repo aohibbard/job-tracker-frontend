@@ -5,6 +5,7 @@ import ContactInput from '../components/ContactInput'
 import ContactsAll from '../components/ContactsAll'
 
 import { fetchContacts } from '../actions/FetchContacts';
+import { addContact } from '../actions/AddContact';
 
 class Contacts extends React.Component{
 
@@ -31,11 +32,11 @@ const mapStateToProps = state => {
     return {contacts: state.contacts}
 }
 
-const mapDispatchToProps = dispatch => ({
-    fetchContacts: () => dispatch({type: 'FETCH_CONTACT'}),
-    addContact: contact => dispatch({type: 'ADD_CONTACT', contact})
-    // edit
-    // delete
-})
+// const mapDispatchToProps = dispatch => ({
+//     fetchContacts: () => dispatch({type: 'FETCH_CONTACT'}),
+//     addContact: contact => dispatch({type: 'ADD_CONTACT', contact})
+//     // edit
+//     // delete
+// })
 
-export default connect(mapStateToProps, {fetchContacts} )(Contacts)
+export default connect(mapStateToProps, {fetchContacts, addContact})(Contacts)

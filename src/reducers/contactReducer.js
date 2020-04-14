@@ -1,4 +1,4 @@
-import cuid from 'cuid';
+// import cuid from 'cuid';
 
 export default function contactReducer( state = {
     loading: false,
@@ -12,14 +12,15 @@ export default function contactReducer( state = {
                     loading: true
                 };
             case 'FETCH_CONTACTS':
-                debugger
                 return {
                     ...state,
                     contacts: action.contacts,
                     loading: false
                 }
             case 'ADD_CONTACT':
-                const newContact = {id: cuid(),
+                debugger
+                const newContact = {
+                    id: action.contact.id,
                     name: action.contact.name,
                     company: action.contact.company,
                     notes: action.contact.notes}
