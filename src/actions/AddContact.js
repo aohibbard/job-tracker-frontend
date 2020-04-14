@@ -22,3 +22,14 @@ export function addContact(contact){
         })
     }
 }
+
+export function deleteContact(contactId){
+    return(dispatch) => {
+        dispatch({type: 'LOAD_JOBS'})
+
+        fetch(URL +`users/1/contacts/${contactId}`, {
+            method: 'DELETE'
+        })
+        .then(dispatch({type: 'DELETE_CONTACT', contactId}))
+    }
+}

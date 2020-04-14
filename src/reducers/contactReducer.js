@@ -31,8 +31,12 @@ export default function contactReducer( state = {
             case 'EDIT_CONTACT':
                 return state;
             case 'DELETE_CONTACT':
-                // filter
-                return state;
+                debugger
+                return {
+                    ...state,
+                    contacts: state.contacts.filter(contact => contact.id !== action.contactId),
+                    loading: false
+                };
             default:
                 return state;
         }
