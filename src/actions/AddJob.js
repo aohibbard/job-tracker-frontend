@@ -23,3 +23,16 @@ export function addJob(job){
         })
     }
 }
+
+export function deleteJob(job){
+    return(dispatch) => {
+        debugger
+        dispatch({type: 'LOAD_CONTACTS'})
+
+        fetch(URL +`users/1/jobs/${job.id}`, {
+            method: 'DELETE'
+        })
+        .then(dispatch({type: 'DELETE_JOB'}))
+
+    }
+}

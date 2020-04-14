@@ -15,7 +15,6 @@ export default function jobReducer( state = {
                     loading: false
                 };
             case 'ADD_JOB':
-                debugger
             const newJob = {
                 // change to show real id
                 id: action.job.title,
@@ -25,12 +24,17 @@ export default function jobReducer( state = {
                 applied: action.job.applied,
                 url: action.job.url 
             }
-            debugger
             return {...state,
                 jobs: [...state.jobs, newJob],
                 //this line is causing the double contacts
                 loading: false
             };
+            case 'DELETE_JOB':
+                return {
+                    ...state,
+                    jobs: state.jobs.filter(job => job.id !== action.job.id),
+                    loading: false
+                };
             default:
                 return state;
         }
