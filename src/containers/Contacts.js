@@ -10,7 +10,6 @@ import { addContact, deleteContact } from '../actions/AddContact';
 class Contacts extends React.Component{
 
     componentDidMount(){
-        console.log("Component did mount")
         this.props.fetchContacts()
     }
 

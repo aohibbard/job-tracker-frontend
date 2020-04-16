@@ -20,8 +20,7 @@ const NavBar = () => {
             </NavLink>
 
             <NavLink style={{ marginRight: '10px' }} 
-                to="/:id/home"
-            >
+                to="/users/:id/home">
             My Page
             </NavLink>
 
