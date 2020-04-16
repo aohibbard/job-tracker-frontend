@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+This project relies on a Ruby on Rails API that must be run separately, which is available at this Github repository: https://github.com/aohibbard/job-tracker-backend . The project is configured such that the Rails receives requests from localhost:3000/api. Without configuring specific ports, you can achieve this functionality by booting the API up first from the backend using the `rails s` command and then starting the React frontend using `npm start`.
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
