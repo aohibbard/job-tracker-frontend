@@ -2,12 +2,29 @@ import React  from 'react';
 
 class JobInput extends React.Component{
 
-    state = {
-        title: '',
-        company: '',
-        due: '',
-        applied: false,
-        url: ''
+    constructor(props){
+        super(props)
+        this.state = {
+            title: '',
+            company: '',
+            due: '',
+            applied: false,
+            url: '',
+            visibility: false,
+        }
+        this.toggleVisibility=this.toggleVisibility.bind(this);
+    }
+
+    toggleVisibility(){
+        if(this.state.visibility===true){
+            this.setState({
+                visibility: false
+            })
+        } else {
+            this.setState({
+                visibility: true
+            })
+        }
     }
 
     handleChange = (event) => {
@@ -29,8 +46,10 @@ class JobInput extends React.Component{
     }
 
     render(){
+        if (this.state.visibility===true){
         return(
             <div className="JobInput">
+                <h4 onClick={this.toggleVisibility}>Add Job</h4>
             <form onSubmit={this.handleSubmit}>
                 <label>Title </label>
                 <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
@@ -51,6 +70,13 @@ class JobInput extends React.Component{
             </form>
             </div>
         )
+        } else {
+            return(
+                <div className="JobInput">
+                <h4 onClick={this.toggleVisibility}>Add Job</h4>
+                </div>
+            )
+        }
     }
 }
 

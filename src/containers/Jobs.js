@@ -17,7 +17,6 @@ class Jobs extends React.Component{
     render(){
         return(
             <div>
-                Show Jobs
                 <JobInput addJob={this.props.addJob} />
                 <JobsAll jobs={this.props.jobs} deleteJob={this.props.deleteJob} />
             </div>

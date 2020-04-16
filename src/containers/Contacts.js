@@ -17,7 +17,6 @@ class Contacts extends React.Component{
     render(){
         return(
             <div>
-                Contact Show?
                 <ContactInput addContact={this.props.addContact} />
                 <ContactsAll contacts={this.props.contacts} deleteContact={this.props.deleteContact} />
             </div>
