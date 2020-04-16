@@ -4,10 +4,23 @@
 const URL = 'http://localhost:3000/api/'
 // {withCredentials: true}
 //find user
+//check second res? 
 
 export const userLogin = ({user}) => {
     return (dispatch) => {
         fetch(URL + 'users/1/jobs', {user})
+        .then(res => res.json())
+        .then(res => {
+            if (res.data.logged_in){
+                this.props.handleLogin(res.data)
+            } else {
+                this.setState({
+                    errors: res.data.errors
+                })
+            }
+        }).catch(error => console.log(error))
+
+
         .then(res => res.json())
         .then(jobs => {
             let jobsArr = []

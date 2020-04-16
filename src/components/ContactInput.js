@@ -3,10 +3,36 @@ import React from 'react';
 
 class ContactInput extends React.Component{
 
-    state = {
-        name: '',
-        company: '',
-        notes: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            company: '',
+            notes: '',
+            visibility: false
+        };
+    this.toggleVisibility=this.toggleVisibility.bind(this)
+    }
+
+
+    // state = {
+    //     name: '',
+    //     company: '',
+    //     notes: '',
+    //     visibility: true,
+    // }
+
+
+    toggleVisibility(){
+        if(this.state.visibility===true){
+            this.setState({
+                visibility: false
+            })
+        } else {
+            this.setState({
+                visibility: true
+            })
+        }
     }
 
     handleChange = (event) => {
@@ -27,8 +53,10 @@ class ContactInput extends React.Component{
     }
 
     render(){
+        if (this.state.visibility===true){
         return(
             <div>
+                <h4 onClick={this.toggleVisibility}>Add Contact</h4>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name</label>
                     <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
@@ -40,9 +68,17 @@ class ContactInput extends React.Component{
                     <input type="text" name="notes" onChange={this.handleChange} value={this.state.notes} />
                     <br />
                     <input type="submit" />
+                    <br />
                 </form>
             </div>
         )
+        } else {
+            return(
+                <div>
+                <h4 onClick={this.toggleVisibility}>Add Contact</h4>
+                </div>
+                )
+        }
     }
 }
 
