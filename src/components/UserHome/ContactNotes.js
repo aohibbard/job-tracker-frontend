@@ -2,6 +2,9 @@ import React from 'react'
 import Moment from 'react-moment';
 // <Moment format="dddd, MMMM Do YYYY">{this.props.job.due}</Moment></p>
 
+// see subtract method here
+// https://medium.com/better-programming/using-moment-js-in-react-native-d1b6ebe226d4
+
 
 class ContactNotes extends React.Component{
 
