@@ -34,24 +34,12 @@ class JobNotes extends React.Component{
         })
     }
 
-    // showDeadlines(arr){
-    //     if(arr.length > 1){
-            
-    //         arr.map(job => )
-    //     } else {
-    //         return "You have no deadlines in the next seven days."
-    //     }
-    // }
-    
-
     render(){
-        // debugger to play with contacts
-        //decide what the logic is
         if(this.state.deadlines.length > 0){
         return(
             <div>
-                You have {this.state.deadlines.length} job(s) due this week.
-                {this.state.deadlines.map(job => <div>{job.title} {job.company} {job.due}</div>)}
+                You have {this.state.deadlines.length} application(s) due this week.
+                {this.state.deadlines.map(job => <div key={job.id}>{job.title} {job.company} {job.due}</div>)}
                 <br />
             </div>
         )} else {
