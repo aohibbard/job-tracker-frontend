@@ -22,13 +22,12 @@ class ContactNotes extends React.Component{
         const from_date = moment().weekday(0);
         //week ending Saturday
         const to_date = moment().weekday(6);
+        //See which contacts have been updated in that span & add to contactActivity
         for (const contact of this.props.contacts.contacts){
             if (moment(contact.updated_at).isBetween(from_date, to_date)){
-                debugger
                 contactActivity.push(contact)
             }
         }
-        debugger
         this.setState({
             contacts: contactActivity
         })

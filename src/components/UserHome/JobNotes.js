@@ -25,7 +25,6 @@ class JobNotes extends React.Component{
 
         for (const job of this.props.jobs.jobs){
             if( moment(job.due).isBetween(today, date)){
-                debugger
                 upcomingDeadlines.push(job)
             }
         }   
