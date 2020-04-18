@@ -6,9 +6,9 @@ export default class ContactView extends React.Component{
     // constructor(props) {
     //     super(props);
     //     this.state = {
-    //         visibility: false
+    //         buttonClick: false
     //     };
-    // this.toggleVisibility=this.toggleVisibility.bind(this)
+    //     this.editRef = React.createRef();
     // }
 
     state = {
@@ -37,13 +37,18 @@ export default class ContactView extends React.Component{
     render(){
 
         return(
-            <div id={this.props.contact.id}>
+            <div id={this.props.contact.id} className="edit-contact">
                 Contact
                 <p>Name: {this.props.contact.name}</p>
                 <p>Company: {this.props.contact.company}</p>
                 <p>Notes: {this.props.contact.notes}</p>
                 <button onClick={this.handleClick}>Update</button>
-                {this.state.buttonClick && <ContactEdit key={this.props.contact.id} contact={this.props} updateContact={this.props.updateContact} deleteContact={this.props.deleteContact}/>}
+                {this.state.buttonClick &&
+                <ContactEdit
+                    key={this.props.contact.id}
+                    contact={this.props}
+                    updateContact={this.props.updateContact}
+                    deleteContact={this.props.deleteContact}/>}
                 {/* EDIT CONTACT */}
                 {/* <button onClick={() => this.props.deleteContact(this.props.contact.id)}>Delete</button> */}
             </div>

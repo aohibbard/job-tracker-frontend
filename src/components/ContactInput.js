@@ -55,7 +55,7 @@ class ContactInput extends React.Component{
     render(){
         if (this.state.visibility===true){
         return(
-            <div>
+            <div className="add-contact">
                 <h4 onClick={this.toggleVisibility}>Add Contact</h4>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name</label>

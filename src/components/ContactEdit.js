@@ -2,21 +2,38 @@ import React from 'react'
 
 export default class ContactEdit extends React.Component{
 
-    state = {
-        id: '',
-        name: '',
-        company: '',
-        notes: '',
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: '',
+            name: '',
+            company: '',
+            notes: '',
+            visibility: true
+        };
+        this.editRef = React.createRef();
     }
 
     componentDidMount(){
-        this.setState({
-            id: this.props.contact.contact.id,
-            name: this.props.contact.contact.name,
-            company: this.props.contact.contact.company,
-            notes: this.props.contact.contact.name
-        })
+        this.editRef.current.scrollIntoView();
     }
+
+    // editRef = React.createRef<HTMLDivElement>();
+
+
+    // componentDidMount(){
+    //     if (this.editRef && this.editRef.current){
+    //         this.editRef.Ref.scrollIntoView()
+    //     }
+    // }
+    // componentDidMount(){
+    //     this.setState({
+    //         id: this.props.contact.contact.id,
+    //         name: this.props.contact.contact.name,
+    //         company: this.props.contact.contact.company,
+    //         notes: this.props.contact.contact.name
+    //     })
+    // }
 
     // constructor(props) {
     //     super(props);
@@ -42,6 +59,7 @@ export default class ContactEdit extends React.Component{
     // }
 
     handleChange = (event) => {
+        // debugger
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -57,7 +75,7 @@ export default class ContactEdit extends React.Component{
 
     render(){
         return(
-            <div key={this.props.contact.contact.id} id={this.props.contact.contact.id}>
+            <div key={this.props.contact.contact.id} id={this.props.contact.contact.id} ref={this.editRef}>
             <form onSubmit={this.handleSubmit}>
                 <label>Name</label>
                 <input type="text" name="name" onChange={this.handleChange} value={this.props.contact.contact.name} />
