@@ -20,68 +20,30 @@ export default class ContactEdit extends React.Component{
         this.editRef.current.scrollIntoView();
     }
 
-    // editRef = React.createRef<HTMLDivElement>();
-
-
-    // componentDidMount(){
-    //     if (this.editRef && this.editRef.current){
-    //         this.editRef.Ref.scrollIntoView()
-    //     }
-    // }
-    // componentDidMount(){
-    //     this.setState({
-    //         id: this.props.contact.contact.id,
-    //         name: this.props.contact.contact.name,
-    //         company: this.props.contact.contact.company,
-    //         notes: this.props.contact.contact.name
-    //     })
-    // }
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         name: this.props.contact.name,
-    //         company: this.props.contact.company,
-    //         notes: this.props.contact.notes,
-    //         visibility: false
-    //     };
-    // this.toggleVisibility=this.toggleVisibility.bind(this)
-    // }
-
-    // toggleVisibility(){
-    //     if(this.state.visibility===true){
-    //         this.setState({
-    //             visibility: false
-    //         })
-    //     } else {
-    //         this.setState({
-    //             visibility: true
-    //         })
-    //     }
-    // }
-
     handleChange = (event) => {
-        // debugger
         this.setState({
             [event.target.name]: event.target.value
         })
     }
 
     handleSubmit(event){
-        event.preventDefault()
         debugger
+        event.preventDefault()
         const updateContact = {
             id: this.state.id,
             name: this.state.name,
             company: this.state.company,
             notes: this.state.name,
         }
-        debugger
         this.props.updateContact(updateContact)
         this.setState({
-            [event.target.name]: ''
+            id: '',
+            name: '',
+            company: '',
+            notes: '',
         })
-        //toggle visibility to false
+        //collapse form
+        this.props.handler()
     }
 
     render(){

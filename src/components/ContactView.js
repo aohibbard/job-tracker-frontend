@@ -3,13 +3,27 @@ import ContactEdit from './ContactEdit'
 
 export default class ContactView extends React.Component{
 
-    state = {
-        buttonClick: false
+    // state = {
+    //     buttonClick: false
+    // }
+    constructor(props){
+        super(props)
+        this.state = {
+            buttonClick: false
+        }
+        this.handler = this.handler.bind(this)
     }
 
     handleClick = () => {
         this.setState({
           buttonClick: !this.state.buttonClick
+        });
+      };
+    
+    handler(){
+        debugger
+        this.setState({
+          buttonClick: false
         });
       };
 
@@ -40,9 +54,8 @@ export default class ContactView extends React.Component{
                     key={this.props.contact.id}
                     contact={this.props}
                     updateContact={this.props.updateContact}
-                    deleteContact={this.props.deleteContact}/>}
-                {/* EDIT CONTACT */}
-                {/* <button onClick={() => this.props.deleteContact(this.props.contact.id)}>Delete</button> */}
+                    deleteContact={this.props.deleteContact}
+                    handler={this.handler}/>}
             </div>
         )
     }

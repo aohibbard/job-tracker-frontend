@@ -30,28 +30,11 @@ export default function contactReducer(
                     loading: false
                 };
             case 'EDIT_CONTACT':
-                debugger
                 return {
                     ...state,
                     contacts: [...state.contacts.map(contact => contact.id === action.contacts.id ? contact=action.contacts : contact)],
                     loading: false
                 };
-
-
-
-                // const updatedContact = state.contacts.find((contact) => {
-                //     if (contact.id === action.contacts.id){
-                //         debugger
-                //         return contact
-                //         //contact = action.contact
-                //     }
-                // })
-                // debugger
-                // return {
-                //     ...state,
-                //     contacts: updatedContact,
-                //     loading: false
-                // };
             case 'DELETE_CONTACT':
                 return {
                     ...state,
