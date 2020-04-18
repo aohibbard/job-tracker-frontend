@@ -46,6 +46,11 @@ export default class ContactEdit extends React.Component{
         this.props.handler()
     }
 
+    handleDelete = (event) => {
+        this.props.deleteContact(this.props.contact.contact.id)
+        this.props.handler()
+    }
+
     render(){
         return(
             <div key={this.props.contact.contact.id} id={this.state.id} ref={this.editRef}>
@@ -59,7 +64,7 @@ export default class ContactEdit extends React.Component{
                 <label>Notes</label>
                 <input type="textarea" name="notes" onChange={this.handleChange} value={this.state.notes} />
                 <br />
-                <button onClick={() => this.props.deleteContact(this.props.contact.contact.id)}>Delete</button>
+                <button onClick={() => this.handleDelete()}>Delete</button>
                 <input type="submit" value="Update" />
                 <br />
             </form>

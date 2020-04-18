@@ -14,15 +14,6 @@ class ContactInput extends React.Component{
     this.toggleVisibility=this.toggleVisibility.bind(this)
     }
 
-
-    // state = {
-    //     name: '',
-    //     company: '',
-    //     notes: '',
-    //     visibility: true,
-    // }
-
-
     toggleVisibility(){
         if(this.state.visibility===true){
             this.setState({
@@ -77,7 +68,7 @@ class ContactInput extends React.Component{
                 <div>
                 <h4 onClick={this.toggleVisibility}>Add Contact</h4>
                 </div>
-                )
+            )
         }
     }
 }
