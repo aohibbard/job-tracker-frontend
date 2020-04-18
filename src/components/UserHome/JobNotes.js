@@ -38,8 +38,12 @@ class JobNotes extends React.Component{
         return(
             <div>
                 You have {this.state.deadlines.length} application(s) due this week.
-                {this.state.deadlines.map(job => <div key={job.id}>{job.title} {job.company} {job.due}</div>)}
-                <br />
+                {this.state.deadlines.map(job => <React.Fragment key={job.id}>
+                    <p>{job.title}</p>
+                    <p>{job.company}</p>
+                    <p>{job.due}</p>
+                </React.Fragment>)}
+
             </div>
         )} else {
             return(
