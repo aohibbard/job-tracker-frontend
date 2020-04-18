@@ -1,6 +1,5 @@
 import React from 'react'
 import moment from 'moment';
-// <Moment format="dddd, MMMM Do YYYY">{this.props.job.due}</Moment></p>
 
 // https://www.freecodecamp.org/forum/t/how-to-use-momentjs-in-react/266329
 

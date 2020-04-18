@@ -16,6 +16,7 @@ class ContactNotes extends React.Component{
         this.showRecentContacts()
     }
 
+    //create array of contacts that been updated this week
     showRecentContacts(){
         let contactActivity = []
         //week beginning Sunday
@@ -33,22 +34,8 @@ class ContactNotes extends React.Component{
         })
     }
 
-    //First Set up params for current date
-    //Array needs to function with date.
-    //Date needs to function with week
-    //Week needs to begin Monday, end Sunday. Current date needs to process its relation to prev. Mon & upcoming Sun
-
-    //Second iterate over most recent updates
-    //this.props.sort by last updated, desc
-    //commit these to an array
-    //if array.length <= 8
-    //you still need to talk to 8 - array.length people
-    //else you have spoken to everyone you need to
-
-    //evaluate array against set up params
-
     render(){
-
+        //check number of contacts updated
         let contactNum = 8 - this.state.contacts.length
         if (contactNum < 8 && contactNum !== 0){
             return(
