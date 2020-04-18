@@ -17,8 +17,7 @@ export default class ContactsAll extends React.Component{
             <div>
                 My Contacts
                 {/* You still need to implement sort on contact */}
-                {this.props.contacts.contacts.map(contact => <ContactView key={contact.id} contact={contact} deleteContact={this.props.deleteContact} />)}
-                {/*pass  in delete and edit */}
+                {this.props.contacts.contacts.map(contact => <ContactView key={contact.id} contact={contact} updateContact={this.props.updateContact} deleteContact={this.props.deleteContact} />)}
 
                 {/* {this.handleLoading()} */}
             </div>

@@ -5,7 +5,7 @@ import ContactInput from '../components/ContactInput'
 import ContactsAll from '../components/ContactsAll'
 
 import { fetchContacts } from '../actions/FetchContacts';
-import { addContact, deleteContact } from '../actions/AddContact';
+import { addContact, deleteContact, updateContact } from '../actions/AddContact';
 
 class Contacts extends React.Component{
 
@@ -17,7 +17,7 @@ class Contacts extends React.Component{
         return(
             <div>
                 <ContactInput addContact={this.props.addContact} />
-                <ContactsAll contacts={this.props.contacts} deleteContact={this.props.deleteContact} />
+                <ContactsAll contacts={this.props.contacts} updateContact={this.props.updateContact} deleteContact={this.props.deleteContact} />
             </div>
         )
     }
@@ -34,4 +34,4 @@ const mapStateToProps = state => {
 //     // delete
 // })
 
-export default connect(mapStateToProps, {fetchContacts, addContact, deleteContact })(Contacts)
+export default connect(mapStateToProps, {fetchContacts, addContact, updateContact, deleteContact })(Contacts)
