@@ -29,7 +29,18 @@ export default function contactReducer( state = {
                     loading: false
                 };
             case 'EDIT_CONTACT':
-                return state;
+                debugger
+                const newContact = state.contacts.map((contact) => {
+                    if (contact.id === action.contact.id){
+                        debugger
+                        //contact = action.contact
+                    }
+                })
+                return {
+                    ...state,
+                    contacts: contacts,
+                    loading: false
+                };
             case 'DELETE_CONTACT':
                 debugger
                 return {

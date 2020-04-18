@@ -6,9 +6,26 @@ export default class ContactView extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
+            name: this.props.contact.name,
+            company: this.props.contact.company,
+            notes: this.props.contacts.notes,
             visibility: false
         };
     this.toggleVisibility=this.toggleVisibility.bind(this)
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit(event){
+        event.preventDefault()
+        this.props.updateContact(this.state)
+        this.setState({
+            [event.target.name]: ''
+        })
     }
 
     handleToggleView = (event) => {
@@ -22,7 +39,7 @@ export default class ContactView extends React.Component{
                 <input type="text" name="company" onChange={this.handleChange} value={this.props.contact.company} />
                 <br />
                 <label>Notes</label>
-                <input type="text" name="notes" onChange={this.handleChange} value={this.props.contact.notes} />
+                <input type="textarea" name="notes" onChange={this.handleChange} value={this.props.contact.notes} />
                 <br />
                 <button onClick={() => this.props.deleteContact(this.props.contact.id)}>Delete</button>
                 <input type="update" />
