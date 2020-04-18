@@ -1,6 +1,7 @@
 // import cuid from 'cuid';
 
-export default function contactReducer( state = {
+export default function contactReducer(
+    state = {
     loading: false,
     contacts: [],
     }, action){
@@ -25,25 +26,33 @@ export default function contactReducer( state = {
                     notes: action.contacts.notes}
                 return {...state,
                     contacts: [...state.contacts, newContact],
-                    //this line is causing the double contacts
+                    //this line is causing the double contacts?
                     loading: false
                 };
             case 'EDIT_CONTACT':
                 debugger
-                const updatedContact = state.contacts.map((contact) => {
-                    if (contact.id === action.contact.id){
-                        debugger
-                        return contact = action.contact
-                        //contact = action.contact
-                    }
-                })
                 return {
                     ...state,
-                    contacts: updatedContact,
+                    contacts: [...state.contacts.map(contact => contact.id === action.contacts.id ? contact=action.contacts : contact)],
                     loading: false
                 };
+
+
+
+                // const updatedContact = state.contacts.find((contact) => {
+                //     if (contact.id === action.contacts.id){
+                //         debugger
+                //         return contact
+                //         //contact = action.contact
+                //     }
+                // })
+                // debugger
+                // return {
+                //     ...state,
+                //     contacts: updatedContact,
+                //     loading: false
+                // };
             case 'DELETE_CONTACT':
-                debugger
                 return {
                     ...state,
                     contacts: state.contacts.filter(contact => contact.id !== action.contactId),

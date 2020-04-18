@@ -3,14 +3,6 @@ import ContactEdit from './ContactEdit'
 
 export default class ContactView extends React.Component{
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         buttonClick: false
-    //     };
-    //     this.editRef = React.createRef();
-    // }
-
     state = {
         buttonClick: false
     }

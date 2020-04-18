@@ -41,7 +41,7 @@ export function updateContact(contact){
         .then(res => res.json())
         .then(contact => {
             let newContact = contact.data.attributes
-            dispatch({type: 'ADD_CONTACT', contacts: newContact})
+            dispatch({type: 'EDIT_CONTACT', contacts: newContact})
         })
     }
 }
