@@ -19,7 +19,7 @@ const ContactsAll = (props) =>{
         return(
             <div>
                 <h2>Contacts</h2>               
-                <Card.Group centered itemsPerRow={2}>
+                <Card.Group itemsPerRow={2}>
                 {sortedContacts.map(contact => <ContactView key={contact.id} contact={contact} updateContact={props.updateContact} deleteContact={props.deleteContact} />)}
                 </Card.Group>
                 {/* {this.handleLoading()} */}
