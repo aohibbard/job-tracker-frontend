@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 //import components
 import Contacts from './containers/Contacts'
 import Jobs from './containers/Jobs'
-import LogIn from './containers/LogIn'
+// import LogIn from './containers/LogIn'
 import UserHome from './containers/UserHome'
 
 export default class App extends Component{
@@ -22,40 +22,42 @@ export default class App extends Component{
   //   .then(data => console.log(data))
   // }
 
-  state = {
-    isLoggedIn: false,
-    user: {}
-  }
+//LOG IN FUNCTIONALITY TO BE IMPLEMENTED LATER
 
-  componentDidMount(){
-    this.loginStatus()
-  }
+  // state = {
+  //   isLoggedIn: false,
+  //   user: {}
+  // }
 
-  handleLogin = (data) => {
-    this.setState({
-      isLoggedIn: true,
-      user: data.user
-    })
-  }
+  // componentDidMount(){
+  //   this.loginStatus()
+  // }
 
-  loginStatus = () => {
-    fetch('http://localhost:3000/api/logged_in', {withCredentials: true})
-    .then(res => {
-      if (res.data.logged_in){
-        this.handleLogin(res)
-      } else {
-        this.handleLogout()
-      }
-    })
-    .catch(error => console.log('api error', error))
-  }
+  // handleLogin = (data) => {
+  //   this.setState({
+  //     isLoggedIn: true,
+  //     user: data.user
+  //   })
+  // }
 
-  handleLogout = () => {
-    this.setState({
-      isLoggedIn: false,
-      user: {}
-    })
-  }
+  // loginStatus = () => {
+  //   fetch('http://localhost:3000/api/logged_in', {withCredentials: true})
+  //   .then(res => {
+  //     if (res.data.logged_in){
+  //       this.handleLogin(res)
+  //     } else {
+  //       this.handleLogout()
+  //     }
+  //   })
+  //   .catch(error => console.log('api error', error))
+  // }
+
+  // handleLogout = () => {
+  //   this.setState({
+  //     isLoggedIn: false,
+  //     user: {}
+  //   })
+  // }
 
   render(){
     return (
@@ -63,10 +65,10 @@ export default class App extends Component{
         <div className="App">
           <NavBar />
           {/* <Route exact path="/" component={Home} /> */}
-          <Route exact path="/login" component={LogIn} />
-          <Route path='/users/:id/home' component={UserHome} />
-          <Route path='/users/:id/contacts/index' component={Contacts} />
-          <Route path='/users/:id/jobs' component={Jobs} />
+          {/* <Route exact path="/login" component={LogIn} /> */}
+          <Route path='/dashboard' component={UserHome} />
+          <Route path='/contacts' component={Contacts} />
+          <Route path='/jobs' component={Jobs} />
         </div>
       </Router>
     );

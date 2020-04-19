@@ -8,30 +8,30 @@ const NavBar = () => {
         <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
 
             <NavLink style={{ marginRight: '10px' }} 
-                to="/"
+                to="/dashboard"
             >
-            Home
+            Dashboard
             </NavLink>
 
-            <NavLink style={{ marginRight: '10px' }} 
+            {/* <NavLink style={{ marginRight: '10px' }} 
                 to="/login"
             >
             LogIn
-            </NavLink>
+            </NavLink> */}
 
-            <NavLink style={{ marginRight: '10px' }} 
+            {/* <NavLink style={{ marginRight: '10px' }} 
                 to="/users/:id/home">
             My Page
-            </NavLink>
+            </NavLink> */}
 
             <NavLink style={{ marginRight: '10px' }} 
-                to="/users/:id/contacts/index"
+                to="/contacts"
             >
             Contacts
             </NavLink>
 
             <NavLink style={{ marginRight: '10px' }} 
-                to="/users/:id/jobs"
+                to="/jobs"
             >
             Jobs
             </NavLink>
