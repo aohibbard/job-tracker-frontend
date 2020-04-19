@@ -29,6 +29,12 @@ export default function jobReducer( state = {
                 //this line is causing the double contacts
                 loading: false
             };
+            case 'UPDATE_JOB':
+                return {
+                    ...state,
+                    jobs: [...state.jobs.map(job => job.id === action.job.id ? job=action.job : job)],
+                    loading: false
+                }
             case 'DELETE_JOB':
                 return {
                     ...state,

@@ -5,7 +5,7 @@ import JobInput from '../components/jobs/JobInput';
 import JobsAll from '../components/jobs/JobsAll.js';
 
 //actions
-import {addJob, deleteJob} from '../actions/AddJob';
+import {addJob, updateJob, deleteJob} from '../actions/AddJob';
 import {fetchJobs} from '../actions/FetchJobs'
 
 class Jobs extends React.Component{
@@ -18,7 +18,7 @@ class Jobs extends React.Component{
         return(
             <div>
                 <JobInput addJob={this.props.addJob} />
-                <JobsAll jobs={this.props.jobs} deleteJob={this.props.deleteJob} />
+                <JobsAll jobs={this.props.jobs} updateJob={this.props.updateJob} deleteJob={this.props.deleteJob} />
             </div>
         )
     }
@@ -33,4 +33,4 @@ const mapStateToProps = state => {
 //     fetchJobs: jobs => dispatch({type: 'FETCH_JOBS', jobs})
 // })
 
-export default connect(mapStateToProps, {addJob, deleteJob, fetchJobs})(Jobs)
+export default connect(mapStateToProps, {addJob, updateJob, deleteJob, fetchJobs})(Jobs)

@@ -10,7 +10,7 @@ export default class JobsAll extends React.Component{
             <div>
                 My Jobs
                 {/* You still need to implement sort on jobs */}
-                {this.props.jobs.jobs.map(job => <JobView key={job.id} job={job} deleteJob={this.props.deleteJob} />)}
+                {this.props.jobs.jobs.map(job => <JobView key={job.id} job={job} updateJob={this.props.updateJob} deleteJob={this.props.deleteJob} />)}
                 {/*pass  in delete and edit */}
 
                 {/* {this.handleLoading()} */}
