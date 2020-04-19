@@ -13,6 +13,18 @@ const NavBar = () => {
             Dashboard
             </NavLink>
 
+            <NavLink style={{ marginRight: '10px' }} 
+                to="/contacts"
+            >
+            Contacts
+            </NavLink>
+
+            <NavLink style={{ marginRight: '10px' }} 
+                to="/jobs"
+            >
+            Jobs
+            </NavLink>
+
             {/* <NavLink style={{ marginRight: '10px' }} 
                 to="/login"
             >
@@ -24,21 +36,9 @@ const NavBar = () => {
             My Page
             </NavLink> */}
 
-            <NavLink  v
-                to="/contacts"
-            >
-            Contacts
-            
-            </NavLink>
-
-            <NavLink style={{ marginRight: '10px' }} 
-                to="/jobs"
-            >
-            Jobs
-            </NavLink>
-
         </div>
     )
 }
 
 export default NavBar;
+

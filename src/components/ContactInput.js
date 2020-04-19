@@ -49,22 +49,22 @@ class ContactInput extends React.Component{
         if (this.state.visibility===true){
         return(
             <div className="add-contact">
-                <h4 onClick={this.toggleVisibility}>Add Contact</h4>
-                <Form onSubmit={this.handleSubmit}>
+                <h4 onClick={this.toggleVisibility} >Add Contact</h4>
+                <Form size="small" onSubmit={this.handleSubmit}>
                     <Form.Field>
                     <label>Name</label>
-                    <input type="text" name="name" onChange={this.handleChange} value={this.state.name}
-                    className="ui input" />
+                    <Form.Input type="text" name="name" onChange={this.handleChange} value={this.state.name}
+                    className="ui input" width={8} />
                     </Form.Field>
                     <Form.Field>
                     <label>Company</label>
-                    <input type="text" name="company" onChange={this.handleChange} value={this.state.company}
-                    className="ui input" />
+                    <Form.Input type="text" name="company" onChange={this.handleChange} value={this.state.company}
+                    className="ui input" width={8} />
                     </Form.Field>
                     <Form.Field >
                     <label>Notes</label>
-                    <input type="text" name="notes" onChange={this.handleChange} value={this.state.notes}
-                    className="ui input" />
+                    <Form.Input type="text" name="notes" onChange={this.handleChange} value={this.state.notes}
+                    className="ui input" width={8} />
                     </Form.Field>
                     <Button type="submit">Add Contact</Button>
                     <br />

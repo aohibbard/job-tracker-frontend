@@ -19,7 +19,7 @@ export default class ContactsAll extends React.Component{
         return(
             <div>
                 <h2>Contacts</h2>               
-                <Card.Group centered>
+                <Card.Group centered itemsPerRow={2}>
                 {sortedContacts.map(contact => <ContactView key={contact.id} contact={contact} updateContact={this.props.updateContact} deleteContact={this.props.deleteContact} />)}
                 </Card.Group>
                 {/* {this.handleLoading()} */}

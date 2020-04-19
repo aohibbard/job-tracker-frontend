@@ -23,7 +23,6 @@ export default class ContactView extends React.Component{
       };
     
     handler(){
-        debugger
         this.setState({
           buttonClick: false
         });

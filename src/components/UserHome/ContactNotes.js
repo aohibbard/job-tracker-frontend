@@ -18,12 +18,11 @@ class ContactNotes extends React.Component{
 
     //create array of contacts that been updated this week
     showRecentContacts(){
-        debugger
         let contactActivity = []
         //week beginning Sunday
-        const from_date = moment().weekday(0);
+        const from_date = moment().weekday(0).startOf('day');
         //week ending Saturday
-        const to_date = moment().weekday(6);
+        const to_date = moment().weekday(6).endOf('day');
         //See which contacts have been updated in that span & add to contactActivity
         for (const contact of this.props.contacts.contacts){
             if (moment(contact.updated_at).isBetween(from_date, to_date)){
@@ -41,11 +40,10 @@ class ContactNotes extends React.Component{
         if (contactNum < 8){
             return(
                 <div>
-                    You still need to contact {contactNum} people this week.
-                    Contacts you have made:
-                    <ul className="weekly-contacts">
-            {this.state.contacts.map(contact => <li key={contact.id} id={contact.id}>{contact.name}</li>)}
-                    </ul>
+                    You still need to contact <b>{contactNum}</b> people this week.
+                    <br />
+                    You have contacted:
+            {this.state.contacts.map(contact => <p id={contact.id}>{contact.name}</p>)}
                 </div>
             )
         } else {

@@ -1,5 +1,7 @@
 import React from 'react'
 import moment from 'moment';
+import Moment from 'react-moment';
+
 
 // https://www.freecodecamp.org/forum/t/how-to-use-momentjs-in-react/266329
 
@@ -37,10 +39,11 @@ class JobNotes extends React.Component{
         return(
             <div>
                 You have {this.state.deadlines.length} application(s) due this week.
+                <br />
                 {this.state.deadlines.map(job => <React.Fragment key={job.id}>
+                    <h3>{job.company}</h3>
                     <p>{job.title}</p>
-                    <p>{job.company}</p>
-                    <p>{job.due}</p>
+                    <p><Moment format="dddd, MMMM Do YYYY">{job.due}</Moment></p>
                 </React.Fragment>)}
 
             </div>
