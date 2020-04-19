@@ -24,10 +24,11 @@ const NavBar = () => {
             My Page
             </NavLink> */}
 
-            <NavLink style={{ marginRight: '10px' }} 
+            <NavLink  v
                 to="/contacts"
             >
             Contacts
+            
             </NavLink>
 
             <NavLink style={{ marginRight: '10px' }} 

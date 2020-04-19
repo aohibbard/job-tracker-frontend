@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button, Form } from 'semantic-ui-react'
+
 // import action 
 
 class ContactInput extends React.Component{
@@ -48,19 +50,25 @@ class ContactInput extends React.Component{
         return(
             <div className="add-contact">
                 <h4 onClick={this.toggleVisibility}>Add Contact</h4>
-                <form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Field>
                     <label>Name</label>
-                    <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
-                    <br />
+                    <input type="text" name="name" onChange={this.handleChange} value={this.state.name}
+                    className="ui input" />
+                    </Form.Field>
+                    <Form.Field>
                     <label>Company</label>
-                    <input type="text" name="company" onChange={this.handleChange} value={this.state.company} />
-                    <br />
+                    <input type="text" name="company" onChange={this.handleChange} value={this.state.company}
+                    className="ui input" />
+                    </Form.Field>
+                    <Form.Field >
                     <label>Notes</label>
-                    <input type="text" name="notes" onChange={this.handleChange} value={this.state.notes} />
+                    <input type="text" name="notes" onChange={this.handleChange} value={this.state.notes}
+                    className="ui input" />
+                    </Form.Field>
+                    <Button type="submit">Add Contact</Button>
                     <br />
-                    <input type="submit" />
-                    <br />
-                </form>
+                </Form>
             </div>
         )
         } else {

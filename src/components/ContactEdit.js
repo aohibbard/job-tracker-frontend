@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button } from 'semantic-ui-react'
+
 
 export default class ContactEdit extends React.Component{
 
@@ -8,8 +10,7 @@ export default class ContactEdit extends React.Component{
             id: this.props.contact.contact.id,
             name: this.props.contact.contact.name,
             company: this.props.contact.contact.company,
-            notes: this.props.contact.contact.name,
-            visibility: true
+            notes: this.props.contact.contact.notes,
         };
         this.editRef = React.createRef();
         this.handleChange = this.handleChange.bind(this);
@@ -27,15 +28,8 @@ export default class ContactEdit extends React.Component{
     }
 
     handleSubmit(event){
-        debugger
         event.preventDefault()
-        const updateContact = {
-            id: this.state.id,
-            name: this.state.name,
-            company: this.state.company,
-            notes: this.state.name,
-        }
-        this.props.updateContact(updateContact)
+        this.props.updateContact(this.state)
         this.setState({
             id: '',
             name: '',
@@ -64,9 +58,14 @@ export default class ContactEdit extends React.Component{
                 <label>Notes</label>
                 <input type="textarea" name="notes" onChange={this.handleChange} value={this.state.notes} />
                 <br />
-                <button onClick={() => this.handleDelete()}>Delete</button>
+                <Button.Group>
+                <Button onClick={() => this.handleDelete()}>Delete</Button>
+                <Button.Or />
+                <Button type="submit" positive>Update</Button>
+                </Button.Group>
+                {/* <button onClick={() => this.handleDelete()}>Delete</button>
                 <input type="submit" value="Update" />
-                <br />
+                <br /> */}
             </form>
             </div>
         )

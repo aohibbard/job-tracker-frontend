@@ -18,6 +18,7 @@ class ContactNotes extends React.Component{
 
     //create array of contacts that been updated this week
     showRecentContacts(){
+        debugger
         let contactActivity = []
         //week beginning Sunday
         const from_date = moment().weekday(0);
@@ -37,7 +38,7 @@ class ContactNotes extends React.Component{
     render(){
         //check number of contacts updated
         let contactNum = 8 - this.state.contacts.length
-        if (contactNum < 8 && contactNum !== 0){
+        if (contactNum < 8){
             return(
                 <div>
                     You still need to contact {contactNum} people this week.

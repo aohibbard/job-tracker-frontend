@@ -9,7 +9,7 @@ export default class JobsAll extends React.Component{
         //way delete is passed is probably wrong
         return(
             <div>
-                My Jobs
+                <h3>My Jobs</h3>
                 {/* You still need to implement sort on jobs */}
                 {sortedJobs.map(job => <JobView key={job.id} job={job} updateJob={this.props.updateJob} deleteJob={this.props.deleteJob} />)}
                 {/*pass  in delete and edit */}

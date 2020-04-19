@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactView from './ContactView'
+import { Card } from 'semantic-ui-react';
 
 
 export default class ContactsAll extends React.Component{
@@ -17,9 +18,10 @@ export default class ContactsAll extends React.Component{
         // this does not work
         return(
             <div>
-                My Contacts
+                <h2>Contacts</h2>               
+                <Card.Group centered>
                 {sortedContacts.map(contact => <ContactView key={contact.id} contact={contact} updateContact={this.props.updateContact} deleteContact={this.props.deleteContact} />)}
-
+                </Card.Group>
                 {/* {this.handleLoading()} */}
             </div>
         )

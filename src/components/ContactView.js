@@ -1,5 +1,7 @@
 import React from 'react';
 import ContactEdit from './ContactEdit'
+import { Card } from 'semantic-ui-react';
+
 
 export default class ContactView extends React.Component{
 
@@ -27,28 +29,17 @@ export default class ContactView extends React.Component{
         });
       };
 
-
-    // toggleVisibility(){
-    //     if(this.state.visibility===true){
-    //         this.setState({
-    //             visibility: false
-    //         })
-    //     } else {
-    //         this.setState({
-    //             visibility: true
-    //         })
-    //     }
-    // }
-
     render(){
-
         return(
             <div id={this.props.contact.id} className="edit-contact">
-                Contact
-                <p>Name: {this.props.contact.name}</p>
-                <p>Company: {this.props.contact.company}</p>
-                <p>Notes: {this.props.contact.notes}</p>
-                <button onClick={this.handleClick}>Update</button>
+                <Card>
+                <Card.Content header={this.props.contact.name} />
+                <Card.Content>Company: {this.props.contact.company}</Card.Content>
+                <Card.Content>Notes: {this.props.contact.notes}</Card.Content>
+                <Card.Content extra>
+                  <button onClick={this.handleClick}>Update</button>
+                  {/* <p>Updated: {this.props.contacts.updated_at}</p> */}
+                </Card.Content>
                 {this.state.buttonClick &&
                 <ContactEdit
                     key={this.props.contact.id}
@@ -56,6 +47,7 @@ export default class ContactView extends React.Component{
                     updateContact={this.props.updateContact}
                     deleteContact={this.props.deleteContact}
                     handler={this.handler}/>}
+                </ Card>
             </div>
         )
     }
