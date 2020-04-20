@@ -2,9 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchContacts } from '../actions/FetchContacts';
 import { fetchJobs } from '../actions/FetchJobs';
+import { fetchGithub } from '../actions/FetchGithub';
 
 import ContactNotes from '../components/UserHome/ContactNotes'
 import JobNotes from '../components/UserHome/JobNotes'
+import GitNotes from '../components/UserHome/GitNotes'
 
 import { Grid } from 'semantic-ui-react';
 
@@ -13,6 +15,8 @@ class UserHome extends React.Component{
     componentDidMount(){
         this.props.fetchContacts()
         this.props.fetchJobs()
+        this.props.fetchGithub()
+
     }
 
     render(){
@@ -25,6 +29,9 @@ class UserHome extends React.Component{
                     <Grid.Column>
                     <JobNotes jobs={this.props.jobs} />
                     </Grid.Column>
+                    {/* <Grid.Column>
+                    <GitNotes githubData={this.props.githubData} />
+                    </Grid.Column> */}
                 </Grid>
             </div>  
         )
@@ -35,4 +42,4 @@ const mapStateToProps = state => {
     return state
 }
 
-export default connect(mapStateToProps, {fetchContacts, fetchJobs} )(UserHome)
+export default connect(mapStateToProps, {fetchContacts, fetchJobs, fetchGithub} )(UserHome)

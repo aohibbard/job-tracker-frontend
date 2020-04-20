@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
 
-import ContactInput from '../components/ContactInput'
-import ContactsAll from '../components/ContactsAll'
+import ContactInput from '../components/Contacts/ContactInput'
+import ContactsAll from '../components/Contacts/ContactsAll'
 
 import { fetchContacts } from '../actions/FetchContacts';
 import { addContact, deleteContact, updateContact } from '../actions/AddContact';
