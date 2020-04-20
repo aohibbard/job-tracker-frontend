@@ -47,7 +47,7 @@ class ContactInput extends React.Component{
 
     render(){
         if (this.state.visibility===true){
-            const validated = this.state.name > 2 && this.state.company > 3 && this.state.notes > 4
+            const validated = this.state.name.length > 2 && this.state.company.length > 2 && this.state.notes.length > 2
         return(
             <div className="add-contact">
                 <h4 onClick={this.toggleVisibility} >Add Contact</h4>

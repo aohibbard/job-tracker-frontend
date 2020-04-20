@@ -22,16 +22,16 @@ class UserHome extends React.Component{
     render(){
         return(
             <div>
-                <Grid centered columns={2} >
+                <Grid centered columns={3} >
                     <Grid.Column>
                     <ContactNotes contacts={this.props.contacts} />
                     </Grid.Column>
                     <Grid.Column>
                     <JobNotes jobs={this.props.jobs} />
                     </Grid.Column>
-                    {/* <Grid.Column>
+                    <Grid.Column>
                     <GitNotes githubData={this.props.githubData} />
-                    </Grid.Column> */}
+                    </Grid.Column>
                 </Grid>
             </div>  
         )

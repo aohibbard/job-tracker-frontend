@@ -47,7 +47,7 @@ class JobInput extends React.Component{
 
     render(){
         if (this.state.visibility===true){
-            const validated = this.state.title > 2 && this.state.company > 3 
+            const validated = this.state.title.length > 2 && this.state.company.length > 3 
 
         return(
             <div className="JobInput">
