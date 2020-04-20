@@ -47,6 +47,8 @@ class JobInput extends React.Component{
 
     render(){
         if (this.state.visibility===true){
+            const validated = this.state.title > 2 && this.state.company > 3 
+
         return(
             <div className="JobInput">
                 <h4 onClick={this.toggleVisibility}>Add Job</h4>
@@ -66,7 +68,7 @@ class JobInput extends React.Component{
                 <label>Link </label>
                 <input type="text" name="url" value={this.state.url} onChange={this.handleChange} />
                 <br />
-                <input type="submit" value="Add Job" />
+                <input type="submit" value="Add Job" disabled={!validated} />
             </form>
             </div>
         )
