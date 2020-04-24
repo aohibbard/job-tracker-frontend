@@ -1,10 +1,19 @@
+## About
+
+Job Tracker is a React application that allows a user to track contacts, pending job applications, and GitHub commits as they work their way toward a job. The tracker is build on specifications provided by Flatiron School in their career prep materials. 
+
+Log In functionality is pending.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-This project relies on a Ruby on Rails API that must be run separately, which is available at this Github repository: https://github.com/aohibbard/job-tracker-backend . The project is configured such that the Rails receives requests from localhost:3000/api. Without configuring specific ports, you can achieve this functionality by booting the API up first from the backend using the `rails s` command and then starting the React frontend using `npm start`.
+This project relies on a Ruby on Rails API that must be run separately, which is available at this Github repository: https://github.com/aohibbard/job-tracker-backend . The project is configured such that the Rails receives requests from localhost:3000/api. Without configuring specific ports, you can achieve this functionality by booting the API up first from the backend using the `rails s` command and then starting the React frontend using `npm start`. If the Rails server is not configured to localhost:3000/api, fetch commands must be updated with the appropriate URL in the src/actions folders.
+
+Github Commit fetches are currently configured to this account. 
 
 ### `yarn start`
 
