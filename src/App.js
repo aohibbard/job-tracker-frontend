@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar.js'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-// import 'semantic-ui/dist/semantic.min.css';
-// https://medium.com/@a.carreras.c/using-semantic-ui-react-your-react-js-app-523ddc9abeb3
 
 //import components
 import Contacts from './containers/Contacts'

@@ -4,7 +4,7 @@ import moment from 'moment'
 import { Card } from 'semantic-ui-react';
 
 const JobsAll = (props) => {
-        const sortedJobs = props.jobs.jobs.sort((a, b) => moment(a.due) - moment(b.due));
+        const sortedJobs = props.jobs.sort((a, b) => moment(a.due) - moment(b.due));
         return(
             <div>
                 <h2>My Jobs</h2>

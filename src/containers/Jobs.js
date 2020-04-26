@@ -25,7 +25,8 @@ class Jobs extends React.Component{
 }
 
 const mapStateToProps = state => {
-    return state
+    return state.jobs
+    // return state
 }
 
 // const mapDispatchToProps = dispatch => ({

@@ -24,7 +24,7 @@ class Contacts extends React.Component{
 }
 
 const mapStateToProps = state => {
-    return {contacts: state.contacts}
+    return state.contacts
 }
 
 // const mapDispatchToProps = dispatch => ({
