@@ -1,5 +1,6 @@
 // const URL = 'https://api.github.com'
-const URL = 'https://api.github.com/users/aohibbard/events'
+// const URL = 'http://localhost:3000/api/'
+const URL = 'https://jobtrack-api.herokuapp.com/api/'
 
 export const fetchGithub = () => {
     return (dispatch) => {

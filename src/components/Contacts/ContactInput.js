@@ -14,6 +14,7 @@ class ContactInput extends React.Component{
             visibility: false
         };
     this.toggleVisibility=this.toggleVisibility.bind(this)
+    // this.handleSubmit=this.handleSubmit.bind(this)
     }
 
     toggleVisibility(){

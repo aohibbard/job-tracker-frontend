@@ -3,7 +3,8 @@
 // https://medium.com/how-i-get-it/react-with-rails-user-authentication-8977e98762f2
 // https://jasonwatmore.com/post/2017/09/16/react-redux-user-registration-and-login-tutorial-example
 
-const URL = 'http://localhost:3000/api/'
+// const URL = 'http://localhost:3000/api/'
+const URL = 'https://jobtrack-api.herokuapp.com/api/'
 // {withCredentials: true}
 //find user
 //check second res? 
