@@ -12,35 +12,6 @@ import { Grid } from 'semantic-ui-react';
 
 class UserHome extends React.Component{
 
-    state = {
-        count: 0
-    }
-
-    handleClick = (event) => {
-        // this.setState({
-        //     count: this.state.count + 1
-        // })
-
-        const URL = 'http://localhost:3000/api/'
-
-        console.log('a');
-
-        fetch(URL + 'users/1/contactsfdsjklfjdlkjflkdsjflkdsjflks')
-            .then(resp => {
-                if(resp.status !== 200) {
-                    throw new Error(resp.statusText);
-                }
-                console.log('b');
-                return resp.json();
-            })
-            .then(data => console.log('c', data))
-            .catch(errors => console.log('d', errors))
-
-        console.log('e');
-
-        // a, e, d
-    }
-
     componentDidMount(){
         this.props.fetchContacts()
         this.props.fetchJobs()
@@ -62,8 +33,6 @@ class UserHome extends React.Component{
                     <GitNotes githubData={this.props.githubData} />
                     </Grid.Column>
                 </Grid>
-                <button onClick={this.handleClick}>Click Me</button> 
-            <p>{this.state.count}</p>
             </div> 
         )
     }
