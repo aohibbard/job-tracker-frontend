@@ -38,11 +38,12 @@ const GitNotes = (props) => {
         mode(reposUsed)
         const popularRepo = props.githubData.githubData.find(obj => obj.repo.id)
         const URL = "https://www.github.com/" + popularRepo.repo.name
+        // could adjust grammar
         return(
             <div>
                 <p>Great work! You've made <b>{gitActivity}</b> commits on Github this week!</p>
                 <br />
-                <p>You're most popular repository this week is <a href={URL}>{popularRepo.repo.name.split('/')[1]}</a></p>
+                <p>You're most active repository this week is <a href={URL}>{popularRepo.repo.name.split('/')[1]}</a></p>
             </div>
         )
     }
