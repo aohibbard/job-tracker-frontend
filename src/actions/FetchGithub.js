@@ -7,7 +7,8 @@ export const fetchGithub = () => {
         fetch(URL)
         .then(res => res.json())
         .then(data => {
-            // const acceptedCommits = ["PushEvent", "IssuesEvent", "CreateEvent", "PullRequestEvent"]
+            // only recognizes PushEvent s as valid comits
+            // could change to const acceptedCommits = ["PushEvent", "IssuesEvent", "CreateEvent", "PullRequestEvent"]
             let legitActions = data.filter(event => event.type === "PushEvent")
             dispatch({type: 'FETCH_GITHUB', githubData: legitActions}) 
         })
