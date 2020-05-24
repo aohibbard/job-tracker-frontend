@@ -9,27 +9,25 @@ const GitNotes = (props) => {
     const gitActivity = props.githubData.githubData.length
     const reposUsed = [] 
     props.githubData.githubData.forEach(obj => reposUsed.push(obj.repo.id))
-    // const mode = function(arr){
-    //     let numMapping = {};
-    //     for (let i=0; i < arr.length; i++){
-    //         if(numMapping[arr[i]] === undefined){
-    //             numMapping[arr[i]] = 0
-    //         }
-    //         numMapping[arr[i]] += 1;
-    //     }
-    //     let greatestFreq = 0
-    //     let mostCommon;
-    //     for(const val in numMapping){
-    //         if(numMapping[val] > greatestFreq){
-    //             greatestFreq = numMapping[val];
-    //             mostCommon = val;
-    //         }
-    //     }
-    //     return mostCommon
-    // }
-    // mode(reposUsed)
-    // const popularRepo = props.githubData.githubData.find(obj => obj.repo.id)
-    // const URL = "https://www.github.com/" + popularRepo.repo.name
+    const mode = function(arr){
+        let numMapping = {};
+        for (let i=0; i < arr.length; i++){
+            if(numMapping[arr[i]] === undefined){
+                numMapping[arr[i]] = 0
+            }
+            numMapping[arr[i]] += 1;
+        }
+        let greatestFreq = 0
+        let mostCommon;
+        for(const val in numMapping){
+            if(numMapping[val] > greatestFreq){
+                greatestFreq = numMapping[val];
+                mostCommon = val;
+            }
+        }
+        return mostCommon
+    }
+
     if (gitActivity < 8){
         return(
             <div>
@@ -37,16 +35,18 @@ const GitNotes = (props) => {
             </div>
         )
     } else {
+        mode(reposUsed)
+        const popularRepo = props.githubData.githubData.find(obj => obj.repo.id)
+        const URL = "https://www.github.com/" + popularRepo.repo.name
         return(
             <div>
                 <p>Great work! You've made <b>{gitActivity}</b> commits on Github this week!</p>
                 <br />
-                {/* <p>You're most popular repository this week is <a href={URL}>{popularRepo.repo.name.split('/')[1]}</a></p> */}
+                <p>You're most popular repository this week is <a href={URL}>{popularRepo.repo.name.split('/')[1]}</a></p>
             </div>
         )
     }
-    // find most common repo (math.mode)? (props.githubData.githubData=> obj.repo.id)
-    // sort by date of commit
+    // sort by date of commit and create d3 Chart
 }
 
 export default GitNotes
