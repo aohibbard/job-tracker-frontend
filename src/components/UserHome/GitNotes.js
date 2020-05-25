@@ -1,8 +1,4 @@
 import React from 'react';
-import * as d3 from "d3";
-
-// import moment from 'moment';
-// import ContactDashboardShow
 
 
 const GitNotes = (props) => {
@@ -38,7 +34,6 @@ const GitNotes = (props) => {
         mode(reposUsed)
         const popularRepo = props.githubData.githubData.find(obj => obj.repo.id)
         const URL = "https://www.github.com/" + popularRepo.repo.name
-        // could adjust grammar
         return(
             <div>
                 <p>Great work! You've made <b>{gitActivity}</b> commits on Github this week!</p>
@@ -47,7 +42,6 @@ const GitNotes = (props) => {
             </div>
         )
     }
-    // sort by date of commit and create d3 Chart
 }
 
 export default GitNotes

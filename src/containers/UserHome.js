@@ -7,6 +7,7 @@ import { fetchGithub } from '../actions/FetchGithub';
 import ContactNotes from '../components/UserHome/ContactNotes'
 import JobNotes from '../components/UserHome/JobNotes'
 import GitNotes from '../components/UserHome/GitNotes'
+import GitD3 from '../components/UserHome/GitD3'
 
 import { Grid } from 'semantic-ui-react';
 
@@ -16,7 +17,6 @@ class UserHome extends React.Component{
         this.props.fetchContacts()
         this.props.fetchJobs()
         this.props.fetchGithub()
-
     }
 
     render(){
@@ -31,6 +31,7 @@ class UserHome extends React.Component{
                     </Grid.Column>
                     <Grid.Column>
                     <GitNotes githubData={this.props.githubData} />
+                    <GitD3 githubData={this.props.githubData} />
                     </Grid.Column>
                 </Grid>
             </div> 
