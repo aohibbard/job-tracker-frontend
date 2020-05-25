@@ -22,7 +22,7 @@ export default class GitD3 extends React.Component{
     render(){
         debugger
         return(
-            <div>D3 Goes Here</div>
+            <div> </div>
         )
     }
 }
