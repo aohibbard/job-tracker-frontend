@@ -7,9 +7,7 @@ const GitNotes = (props) => {
     const fromDate = moment().weekday(0).startOf('day');
     //week ending Saturday
     const toDate = moment().weekday(6).endOf('day');
-    const difference = moment().diff(fromDate, 'days')
-    const dateLimit = fromDate.add(difference, 'days')
-    debugger
+
     // should filter using above constants
     const gitActivity = props.githubData.githubData.length
     const reposUsed = [] 
