@@ -30,6 +30,9 @@ const ContactNotes = (props) => {
         return(
             <div>
                 Great work! You've contacted {contactActivity.length} people this week!
+                <br />
+                Your contacts this week include:
+                {contactActivity.slice(0, 5).map(contact => <React.Fragment key={contact.id}> {contact.name} <br /></React.Fragment>) }
             </div>
         )
     }
