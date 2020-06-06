@@ -14,8 +14,7 @@ import { Card } from 'semantic-ui-react';
     // }
 
 const ContactsAll = (props) =>{
-        const sortedContacts = props.contacts.sort((a, b) => a.name - b.name);
-        // this does not work
+        const sortedContacts = props.contacts.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
         return(
             <div>
                 <h2>Contacts</h2>               
