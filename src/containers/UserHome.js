@@ -31,7 +31,7 @@ class UserHome extends React.Component{
                     </Grid.Column>
                     <Grid.Column>
                     <GitNotes githubData={this.props.githubData} />
-                    <GitBars githubData={this.props.githubData} />
+                    {/* <GitBars githubData={this.props.githubData} /> */}
                     </Grid.Column>
                 </Grid>
             </div> 
