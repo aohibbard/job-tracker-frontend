@@ -64,7 +64,7 @@ export default class App extends Component{
           <NavBar />
           {/* <Route exact path="/" component={Home} /> */}
           {/* <Route exact path="/login" component={LogIn} /> */}
-          <Route path='/dashboard' component={UserHome} />
+          <Route exact path='/' component={UserHome} />
           <Route path='/contacts' component={Contacts} />
           <Route path='/jobs' component={Jobs} />
         </div>
