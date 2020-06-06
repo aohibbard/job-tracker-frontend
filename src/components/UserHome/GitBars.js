@@ -125,7 +125,7 @@ const GitBars = (props) => {
 
 
     const titleG = svg.append("g")
-
+    // playing with d3
     // titleG.append('text')
     //     .attr('class', 'title')
     //     .attr('x', width / 2)
