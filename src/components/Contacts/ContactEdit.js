@@ -6,17 +6,22 @@ export default class ContactEdit extends React.Component{
 
     constructor(props) {
         super(props);
+        // form inputs
         this.state = {
             id: this.props.contact.contact.id,
             name: this.props.contact.contact.name,
             company: this.props.contact.contact.company,
             notes: this.props.contact.contact.notes,
         };
+        // enable focus page
         this.editRef = React.createRef();
+
+        // toggle view
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // focus page on form
     componentDidMount(){
         this.editRef.current.scrollIntoView();
     }

@@ -23,7 +23,6 @@ const JobNotes = (props) => {
     let upcomingDeadlines = []
 
     const today = moment(new Date())
-    //7 days from today
     const date = moment().add(7, 'days') 
 
     for (const job of props.jobs.jobs){

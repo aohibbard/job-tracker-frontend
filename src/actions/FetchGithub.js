@@ -12,6 +12,6 @@ export const fetchGithub = () => {
             let legitActions = data.filter(event => event.type === "PushEvent")
             dispatch({type: 'FETCH_GITHUB', githubData: legitActions}) 
         })
-        .catch(error => console.error(error))
+        .catch(error => console.log(error))
     }
 }

@@ -27,11 +27,4 @@ const mapStateToProps = state => {
     return state.contacts
 }
 
-// const mapDispatchToProps = dispatch => ({
-//     fetchContacts: () => dispatch({type: 'FETCH_CONTACT'}),
-//     addContact: contact => dispatch({type: 'ADD_CONTACT', contact})
-//     // edit
-//     // delete
-// })
-
 export default connect(mapStateToProps, {fetchContacts, addContact, updateContact, deleteContact })(Contacts)

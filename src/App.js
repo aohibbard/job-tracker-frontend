@@ -2,25 +2,24 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar.js'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
+import {Switch} from 'react-router-dom';
 
 //import components
 import Contacts from './containers/Contacts'
 import Jobs from './containers/Jobs'
-import LogIn from './containers/LogIn'
+import LogIn from './Registrations/LogIn'
 import UserHome from './containers/UserHome'
+import Landing from './components/Landing'
 
 export default class App extends Component{
 
-  componentDidMount(){
-    console.log("Component did mount")
-    fetch('http://localhost:3000/api/users/1')
-    .then(console.log("Hit Second Line"))
-    .then(res => res.json())
-    .then(console.log("Hit Third Line"))
-    .then(data => console.log(data))
-  }
+  // componentDidMount(){
+  //   fetch('http://localhost:3000/api/users/1')
+  //   .then(res => res.json())
+  //   .then(data => console.log(data))
+  // }
 
-LOG IN FUNCTIONALITY TO BE IMPLEMENTED LATER
+// LOG IN FUNCTIONALITY TO BE IMPLEMENTED LATER
 
   state = {
     isLoggedIn: false,
@@ -47,7 +46,7 @@ LOG IN FUNCTIONALITY TO BE IMPLEMENTED LATER
         this.handleLogout()
       }
     })
-    .catch(error => console.log('api error', error))
+    .catch(error => console.log('api errors:', error))
   }
 
   handleLogout = () => {
@@ -57,19 +56,35 @@ LOG IN FUNCTIONALITY TO BE IMPLEMENTED LATER
     })
   }
 
+
   render(){
-    return (
+    return(
       <Router>
         <div className="App">
           <NavBar />
-          {/* <Route exact path="/" component={Home} /> */}
-          {/* <Route exact path="/login" component={LogIn} /> */}
-          <Route exact path='/' component={UserHome} />
-          <Route path='/contacts' component={Contacts} />
-          <Route path='/jobs' component={Jobs} />
+            <Switch>
+              <Route exact path='/' component={}/>
+              <Route exact path='/login' component={}/>
+              <Route exact path='/signup' component={}/>
+            </Switch>
         </div>
       </Router>
-    );
+    )
   }
+  // original render
+  // render(){
+  //   return (
+  //     <Router>
+  //       <div className="App">
+  //         <NavBar />
+  //         {/* <Route exact path="/" component={Home} /> */}
+  //         {/* <Route exact path="/login" component={LogIn} /> */}
+  //         <Route exact path='/' component={UserHome} />
+  //         <Route path='/contacts' component={Contacts} />
+  //         <Route path='/jobs' component={Jobs} />
+  //       </div>
+  //     </Router>
+  //   );
+  // }
 
 }

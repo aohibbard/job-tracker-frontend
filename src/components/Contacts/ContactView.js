@@ -5,9 +5,6 @@ import { Card } from 'semantic-ui-react';
 
 export default class ContactView extends React.Component{
 
-    // state = {
-    //     buttonClick: false
-    // }
     constructor(props){
         super(props)
         this.state = {

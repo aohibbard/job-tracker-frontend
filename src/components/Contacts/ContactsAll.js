@@ -3,16 +3,6 @@ import ContactView from './ContactView'
 import { Card } from 'semantic-ui-react';
 
 
-// class ContactsAll extends React.Component{
-
-    // handleLoading = () => {
-    //     if(this.props.loading){
-    //         return <div>Loading</div>
-    //     } else {
-    //         return this.props.contacts.contacts.map(contact => <ContactView key={contact.id} contact={contact} />)
-    //     }
-    // }
-
 const ContactsAll = (props) =>{
         const sortedContacts = props.contacts.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
         return(
