@@ -8,6 +8,7 @@ import {Switch} from 'react-router-dom';
 import Contacts from './containers/Contacts'
 import Jobs from './containers/Jobs'
 import LogIn from './Registrations/LogIn'
+import SignUp from './Registrations/SignUp'
 import UserHome from './containers/UserHome'
 import Landing from './components/Landing'
 
@@ -63,9 +64,9 @@ export default class App extends Component{
         <div className="App">
           <NavBar />
             <Switch>
-              <Route exact path='/' component={}/>
-              <Route exact path='/login' component={}/>
-              <Route exact path='/signup' component={}/>
+              <Route exact path='/' render={props => (<Landing {...props} loggedInStatus={this.state.isLoggedIn} />)} />
+              <Route exact path='/login' render={props => (<LogIn {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />) } />
+              <Route exact path='/signup' render={props => (<SignUp {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />) } />
             </Switch>
         </div>
       </Router>
