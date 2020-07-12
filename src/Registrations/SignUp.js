@@ -11,6 +11,10 @@ class SignUp extends React.Component{
         errors: ''
     }
 
+    componentWillMount() {
+        return this.props.loggedInStatus ? this.redirect() : null
+      }
+
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value

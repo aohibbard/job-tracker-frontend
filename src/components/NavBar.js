@@ -1,6 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// covert to class or use a hook
+/*
+in logout
+const handleLogout = () => {
+    fetch('http://localhost:3001/logout', {withCredentials: true})
+    .then(response => {
+      props.handleLogout()
+      props.history.push('/')
+    })
+    .catch(error => console.log(error))
+
+}
+*/
 
 
 const NavBar = () => {
@@ -35,6 +48,9 @@ const NavBar = () => {
                 to="/users/:id/home">
             My Page
             </NavLink> */}
+
+            { this.props.loggedInStatus ? <NavLink style={{ marginRight: '10px' }}
+                to="/logout">Log Out</NavLink> : null}
 
         </div>
     )
