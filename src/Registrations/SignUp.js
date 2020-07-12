@@ -37,7 +37,7 @@ class SignUp extends React.Component{
             },
             body: JSON.stringify(user, {withCredentials: true})
         }
-        fetch('http://www.localhost:3001/signup', configObj)  
+        fetch('http://www.localhost:3000/signup', configObj)  
             .then(res => {
                 if (res.data.logged_in){
                     this.props.handleLogin(res.data)

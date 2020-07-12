@@ -1,12 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router';
+// import {Link} from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 const Landing = () => {
     return (
         <div>
-            <Link to='/login'>Log In</Link>
+            <NavLink to='/login'>Log In</NavLink>
             <br />
-            <Link to='/signup'>Sign Up</Link>
+            <NavLink to='/signup'>Sign Up</NavLink>
         </div>
     )
 }
