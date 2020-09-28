@@ -7,7 +7,7 @@ import { fetchGithub } from '../actions/FetchGithub';
 import ContactNotes from '../components/UserHome/ContactNotes'
 import JobNotes from '../components/UserHome/JobNotes'
 import GitNotes from '../components/UserHome/GitNotes'
-import GitBars from '../components/UserHome/GitBars'
+// import GitBars from '../components/UserHome/GitBars'
 
 import { Grid } from 'semantic-ui-react';
 

@@ -8,7 +8,6 @@ const height = 150;
 const margin = {top: 20, right: 5, bottom: 20, left: 35};
 
 export default class GitD3 extends Component {
-    debugger
 
     state = {
         bars: [],

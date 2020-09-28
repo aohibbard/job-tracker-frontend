@@ -17,22 +17,23 @@ const handleLogout = () => {
 
 
 const NavBar = () => {
+    const linkCss = {marginRight: '10px', color: 'white', fontWeight: 'bold'}
     return (
-        <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
+        <div class="NavBar" style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px', backgroundColor: "purple", textColor: "black", }} role="navigation">
 
-            <NavLink style={{ marginRight: '10px' }} 
+            <NavLink style={linkCss} 
                 to="/"
             >
             Dashboard
             </NavLink>
 
-            <NavLink style={{ marginRight: '10px' }} 
+            <NavLink style={linkCss} 
                 to="/contacts"
             >
             Contacts
             </NavLink>
 
-            <NavLink style={{ marginRight: '10px' }} 
+            <NavLink style={linkCss} 
                 to="/jobs"
             >Jobs</NavLink>
 
@@ -47,8 +48,8 @@ const NavBar = () => {
             My Page
             </NavLink> */}
 
-            { this.props.loggedInStatus ? <NavLink style={{ marginRight: '10px' }}
-                to="/logout">Log Out</NavLink> : null}
+            {/* { this.props.loggedInStatus ? <NavLink style={{ marginRight: '10px' }}
+                to="/logout">Log Out</NavLink> : null} */}
 
         </div>
     )
