@@ -29,8 +29,9 @@ export default class ContactView extends React.Component{
       };
 
     render(){
+      const gridCss = {padding: '2rem'}
         return(
-            <div id={this.props.contact.id} className="edit-contact">
+            <div style={gridCss} id={this.props.contact.id} className="edit-contact">
                 <Card>
                 <Card.Content header={this.props.contact.name} />
                 <Card.Content>Company: {this.props.contact.company}</Card.Content>
