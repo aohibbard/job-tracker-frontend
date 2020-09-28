@@ -4,22 +4,22 @@ import { NavLink } from 'react-router-dom';
 
 
 const NavBar = () => {
+    const linkCss = {marginRight: '10px', color: 'white', fontWeight: 'bold'}
     return (
-        <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
-
-            <NavLink style={{ marginRight: '10px' }} 
+<div class="NavBar" style={{paddingTop: '8px', paddingBottom: '10px', marginBottom: '12px', backgroundColor: "purple" }} role="navigation">
+            <NavLink style={linkCss} 
                 to="/"
             >
             Dashboard
             </NavLink>
 
-            <NavLink style={{ marginRight: '10px' }} 
+            <NavLink style={linkCss}
                 to="/contacts"
             >
             Contacts
             </NavLink>
 
-            <NavLink style={{ marginRight: '10px' }} 
+            <NavLink style={linkCss} 
                 to="/jobs"
             >
             Jobs
