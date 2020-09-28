@@ -13,12 +13,14 @@ export default class JobView extends React.Component{
     }
 
     render(){
+        const dueDate = Date(this.props.job.due)
+        const gridCss = {padding: '2rem'}
         return(
-            <div id={this.props.job.id}>
+            <div style = {gridCss} id={this.props.job.id}>
                 <Card>
                 <Card.Content header={this.props.job.title} />
                 <Card.Content>Company: {this.props.job.company}</Card.Content>
-                <Card.Content>Due: <Moment format="dddd, MMMM Do YYYY">{this.props.job.due}</Moment></Card.Content>
+        <Card.Content>Due: <Moment format="dddd, MMMM Do YYYY">{dueDate}</Moment></Card.Content>
                 <Card.Content>
                 <label>Applied  </label>
                 <input type="checkbox" name="applied" checked={this.props.job.applied} onChange={this.handleClick.bind(this)}/>
