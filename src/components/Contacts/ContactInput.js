@@ -52,23 +52,23 @@ class ContactInput extends React.Component{
         return(
             <div className="add-contact">
                 <h4 onClick={this.toggleVisibility} >Add Contact</h4>
-                <Form size="small" onSubmit={this.handleSubmit}>
+                <Form role="form" size="small" onSubmit={this.handleSubmit}>
                     <Form.Field>
                     <label>Name</label>
-                    <Form.Input type="text" name="name" onChange={this.handleChange} value={this.state.name}
-                    className="ui input" width={8} />
+                    <Form.Input type="text" name="name"  onChange={this.handleChange} value={this.state.name}
+                    className="ui input" width={8} aria-labelledBy="Add Contact" />
                     </Form.Field>
                     <Form.Field>
                     <label>Company</label>
                     <Form.Input type="text" name="company" onChange={this.handleChange} value={this.state.company}
-                    className="ui input" width={8} />
+                    className="ui input" width={8} aria-labelledBy="Add Contact" />
                     </Form.Field>
                     <Form.Field >
                     <label>Notes</label>
                     <Form.Input type="text" name="notes" onChange={this.handleChange} value={this.state.notes}
-                    className="ui input" width={8} />
+                    className="ui input" width={8} aria-labelledBy="Add Contact" />
                     </Form.Field>
-                    <Button type="submit" disabled={!validated}>Add Contact</Button>
+                    <Button type="submit" disabled={!validated} aria-label="Submit">Add Contact</Button>
                     <br />
                 </Form>
             </div>
