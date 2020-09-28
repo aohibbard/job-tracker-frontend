@@ -23,6 +23,7 @@ const ContactNotes = (props) => {
             <br />
             You have contacted:
             <br />
+            <br />
             {contactActivity.map(contact => <React.Fragment key={contact.id}> {contact.name} <br /></React.Fragment>) }
             </div>
         )
